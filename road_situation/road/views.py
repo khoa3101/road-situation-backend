@@ -51,12 +51,10 @@ def get_image(request):
     # Get the file from post request
     img = request.FILES['photo']
     img = Image.open(img).convert('RGB')
-
     label, _ = classify(RoadConfig.model, img)
     if not label == 0:
-        location = request.data['location']
-        lat = location['latitude']
-        long = location.data['longitude']
+        lat = request.data['latitude']
+        long = request.data['longitude']
 
         new_event = Event(NAME=categories[label], LAT=lat, LONG=long)
         new_event.save()
