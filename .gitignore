@@ -5,6 +5,10 @@ __pycache__/
 .vscode
 # C extensions
 *.so
+# Image
+*.JPG
+# Model
+*.pth
 
 # Distribution / packaging
 .Python
