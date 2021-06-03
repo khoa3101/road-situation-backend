@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
 from django.conf.urls import url
+from django.conf.urls.static import static
 
 from road import views
 
@@ -24,5 +26,9 @@ urlpatterns = [
 
     url(r'^events', views.get_events, name='Get all events'),
 
-    url(r'^upload', views.get_image, name='Post image')
-]
+    url(r'^upload', views.post_image, name='Post image'),
+
+    url(r'^image', views.get_image, name='Get image'),
+
+    url(r'^delete', views.delete_item, name='Delete item in the database')
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

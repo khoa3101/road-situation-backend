@@ -1,8 +1,12 @@
 import requests
 import json
+import datetime
+import pytz
 
-file = {'photo': open('CHI_0192.JPG', 'rb')}
-data = {'latitude': 1.0, 'longitude': 2.0}
-context = requests.post('http://127.0.0.1:8000/upload', files=file, data=data)
-# context = requests.get('http://127.0.0.1:8000/events')
+
+file = {'image': open('CHI_0192.JPG', 'rb')}
+data = {'latitude': 1.5, 'longitude': 2.1}
+# context = requests.post('http://517cea5bac81.ngrok.io/upload', files=file, data=data)
+context = requests.get('http://517cea5bac81.ngrok.io/events')
+# # context = requests.get('http://517cea5bac81.ngrok.io/delete?id=1')
 print(context.text)

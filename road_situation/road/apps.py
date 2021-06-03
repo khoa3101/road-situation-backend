@@ -13,8 +13,8 @@ class RoadConfig(AppConfig):
     device = "cuda" if torch.cuda.is_available() else "cpu"
     # model = torch.load(settings.MODELS.joinpath('AI4VN_ViT_model_final.pth')).to(device).eval()
     extractor = VisionTransformer(version='ViT-B_16', pretrained=None)
-    model = Model(extractor = extractor, nclasses=8).to(device)
-    pretrained = torch.load(settings.MODELS.joinpath('AI4VN_ViT_model_final.pth'))
-    model.load_state_dict(pretrained['model_state_dict']).to(device).eval()
+    model = Model(extractor = extractor, nclasses=8).to(device).eval()
+    pretrained = torch.load(settings.MODELS.joinpath('AI4VN_ViT_model.pth'), map_location=device)
+    model.load_state_dict(pretrained['model_state_dict'])
 
     path = settings.BASE_DIR

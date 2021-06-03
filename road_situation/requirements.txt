@@ -1,0 +1,7 @@
+django
+djangorestframework
+ml_collections
+torch
+totchvision
+numpy
+scipy

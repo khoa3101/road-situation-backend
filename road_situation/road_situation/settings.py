@@ -14,7 +14,8 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+MEDIA_ROOT = BASE_DIR.joinpath('media')
+MEDIA_URL = '/home/Users/khoanguyen/Downloads/media/'
 MODELS = BASE_DIR.joinpath('models')
 
 
@@ -27,7 +28,7 @@ SECRET_KEY = 'django-insecure-803j-z8*o34cgr85)4s5fzm=o-%n*ztuz8+c7&p4#y3+ra1+43
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['517cea5bac81.ngrok.io']
 
 
 # Application definition
