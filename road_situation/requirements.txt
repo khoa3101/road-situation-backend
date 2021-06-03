@@ -2,6 +2,6 @@ django
 djangorestframework
 ml_collections
 torch
-totchvision
+torchvision
 numpy
 scipy
